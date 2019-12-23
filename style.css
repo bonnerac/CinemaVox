@@ -1,0 +1,25 @@
+body{
+    background-color: black;
+    background-image: url("Background-Cinema.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+.nav-wrapper{
+    background-color:#636162;
+}
+.input-field label {
+    color: #636162;
+}
+.input-field textarea[class=materialize-textarea]:focus {
+    border-bottom: 1px solid whitesmoke;
+    box-shadow: 0 1px 0 0 whitesmoke;
+    color: whitesmoke;
+}
+label.active {
+    color: rgb(158, 8, 8) !important;
+  }
+#submit-btn{
+    background-color: rgb(158, 8, 8);
+    margin-top: 15px;
+}
