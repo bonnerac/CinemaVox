@@ -4,9 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>CinemaVox</title>
 </head>
 <body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">
+                <i class="large material-icons">theaters hearing</i>
+                CinemaVox</a>
+        </div>
+    </nav>
+    <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s2">
+              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <label for="textarea1">Enter a movie!</label>
+            </div>
+            <button id= "submit-btn" class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+              </button>
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col s4"></div>
+        <div class="col s4">
+          <div class="card">
+            <div class="card-image">
+              <img src="http://picsum.photos/500">
+              <span class="card-title">Movie Plot</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light red">
+                  <i class="material-icons">play_circle_outline</i></a>
+            </div>
+            <div class="card-content">
+              <p>This is where the plot will appear. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam reprehenderit nemo, deserunt deleniti numquam minima illum praesentium! Optio quae dignissimos nisi neque quas consectetur, modi, quibusdam omnis sed deserunt excepturi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo iure dicta aliquam, labore delectus cupiditate perspiciatis doloremque impedit. Rerum, minima sunt quis quo rem reiciendis magnam tenetur impedit? Velit, rerum!</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s4"></div>
+      </div>
+            
     
 </body>
 </html>
