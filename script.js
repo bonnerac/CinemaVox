@@ -3,8 +3,6 @@ if (screen.width > 900) {
     $(".card").attr("class", "card horizontal")
 }
 
-
-
 // var movie = "yol";
 var output_plot = "";
 $(".card").hide()
