@@ -23,3 +23,6 @@ label.active {
     background-color: rgb(158, 8, 8);
     margin-top: 15px;
 }
+#click-text{
+    text-align: center;
+}

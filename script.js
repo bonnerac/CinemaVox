@@ -1,11 +1,18 @@
-console.log(window);
+console.log(screen.width);
+if (screen.width > 900) {
+    $(".card").attr("class", "card horizontal")
+}
+
+
 
 // var movie = "yol";
 var output_plot = "";
+$(".card").hide()
 
 //gets data from omdp and returns output 
 $("#submit-btn").on("click", function (event) {
     event.preventDefault();
+    $(".card").show()
     console.log(event);
     var movie = $("#textarea1").val().trim();
     console.log("Querying for movie:" + movie);
@@ -19,6 +26,9 @@ $("#submit-btn").on("click", function (event) {
         $(".card-content").text(output_plot);
         console.log(response);
         $("img").attr("src", response.Poster);
+        $(".card-title").text(response.Title + " (" + response.Year + ")");
+
+
     });
 
 });
