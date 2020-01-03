@@ -36,4 +36,18 @@ ul.dropdown-content.select-dropdown li span {
 .select-wrapper input.select-dropdown:focus {
     border-bottom: 1px solid whitesmoke;
 }
-
+input[type=range]::-webkit-slider-thumb {
+    background-color: rgb(158, 8, 8);
+  }
+  input[type=range]::-moz-range-thumb {
+    background-color: rgb(158, 8, 8);
+  }
+  input[type=range]::-ms-thumb {
+    background-color: rgb(158, 8, 8);
+  }
+  input[type=range] + .thumb {
+    background-color: #dedede;
+  }
+  input[type=range] + .thumb.active .value {
+    color: rgb(158, 8, 8);
+  }
