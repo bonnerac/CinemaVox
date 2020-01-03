@@ -1,23 +1,21 @@
-
 $(document).ready(function () {
     $(".card").hide()
+    console.log(screen.width);
     if (screen.width > 900) {
         $(".card").attr("class", "card horizontal")
     }
 
     $('select').formSelect();
+    // var selected_lang = 'en-us';
 
-
-
-
-    // var movie = "yol";
     var output_plot = "";
 
 
-    //gets data from omdp and returns output 
+
+
     $("#submit-btn").on("click", function (event) {
         event.preventDefault();
-        // $(".card").show()
+        //$(".card").show()
         console.log(event);
         var movie = $("#textarea1").val().trim();
         console.log("Querying for movie:" + movie);
@@ -39,8 +37,6 @@ $(document).ready(function () {
                 $("img").attr("src", response.Poster);
                 $(".card-title").text(response.Title + " (" + response.Year + ")");
             }
-
-
 
         });
 
