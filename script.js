@@ -15,9 +15,7 @@ $(document).ready(function () {
 
     $("#submit-btn").on("click", function (event) {
         event.preventDefault();
-        console.log($("#select").val());
 
-        // $(".card").show()
         console.log(event);
         var movie = $("#textarea1").val().trim();
         console.log("Querying for movie:" + movie);
@@ -27,8 +25,8 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response) {
             if (response.Response == "False") {
-                // $(".card").hide()
-                alert("please enter a movie title")
+                $('.modal').modal();
+                $('#modal1').modal('open');
             }
             else {
                 $(".card").show()
