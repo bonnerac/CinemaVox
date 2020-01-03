@@ -22,16 +22,14 @@ $("#submit-btn").on("click", function (event) {
         $(".card-content").text(output_plot);
         console.log(response);
         $("img").attr("src", response.Poster);
-
+        $(".card-title").text(response.Title + " (" + response.Year + ")");
     });
 
 });
 
-
 $(".btn-floating").on("click", function () {
     console.log("working");
     // var queryURL_rss = "http://api.voicerss.org/?key=68d5397c419d4cbea5dfe35a4fc712c8&hl=en-us&src=" + output_plot;
-
     var queryURL_rss = "http://api.voicerss.org/?";
 
     $.ajax({
@@ -50,8 +48,4 @@ $(".btn-floating").on("click", function () {
         });
         console.log("Output is " + event);
     });
-
 })
-
-
-
