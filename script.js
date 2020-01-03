@@ -9,13 +9,18 @@ $(document).ready(function () {
 
     var output_plot = "";
     var accent = "";
+    var sound_value;
 
     console.log($("#select").val());
 
-
     $("#submit-btn").on("click", function (event) {
         event.preventDefault();
+        // console.log($("#select").val());
+        // console.log($("#test5").val());
+        sound_value = parseInt($("#test5").val());
 
+
+        // $(".card").show()
         console.log(event);
         var movie = $("#textarea1").val().trim();
         console.log("Querying for movie:" + movie);
@@ -42,7 +47,8 @@ $(document).ready(function () {
                     $("#select").val() != 3 &&
                     $("#select").val() != 4 &&
                     $("#select").val() != 5) {
-                    alert("Please pick one accent!!!")
+                    $('.modal').modal();
+                    $('#modal2').modal('open');
                 } else {
 
                     if ($("#select").val() == 1) {
@@ -63,14 +69,10 @@ $(document).ready(function () {
                     else {
                         accent = "en-us"
                     }
-                    console.log(accent);
                 }
             }
         });
         console.log(typeof ($("#select").val()));
-
-
-
     });
 
 
@@ -88,7 +90,7 @@ $(document).ready(function () {
                 key: '56d46fda47404a73b8b4d0b4925d7eef',
                 src: output_plot,
                 hl: accent,
-                r: 0,
+                r: sound_value,
                 c: 'mp3',
                 f: '44khz_16bit_stereo',
                 ssml: false
@@ -96,6 +98,5 @@ $(document).ready(function () {
             console.log("Output is " + event);
         });
     })
-
 });
 
