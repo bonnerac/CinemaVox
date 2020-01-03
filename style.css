@@ -26,3 +26,14 @@ label.active {
 #click-text{
     text-align: center;
 }
+.select-dropdown{
+    color: white;
+}
+ul.dropdown-content.select-dropdown li span {
+    color:  rgb(158, 8, 8); 
+    background-color: #636162;
+}
+.select-wrapper input.select-dropdown:focus {
+    border-bottom: 1px solid whitesmoke;
+}
+

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>CinemaVox</title>
@@ -15,17 +16,34 @@
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">
-                <i class="large material-icons">theaters hearing</i>
-                CinemaVox</a>
+            <a href="#" class="brand-logo">CinemaVox</a>
         </div>
     </nav>
     <div class="row">
         <form class="col s12">
             <div class="row">
-                <div class="input-field col s2">
+                <div class="input-field col s12 m4 lg4">
                     <textarea id="textarea1" class="materialize-textarea"></textarea>
                     <label for="textarea1">Enter a movie!</label>
+                </div>
+                <div class="input-field col s12 m3 lg3">
+                    <select>
+                        <option value="" disabled selected>Choose your voice:</option>
+                        <option value="1">US English: Male</option>
+                        <option value="2">US English: Female</option>
+                        <option value="3">UK English: Male</option>
+                        <option value="4">UK English: Female</option>
+                    </select>
+                    <label>Voice Type</label>
+                </div>
+                <div class="input-field col s12 m3 lg3">
+                    <select>
+                        <option value="" disabled selected>Choose your speed:</option>
+                        <option value="1">Slow</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Fast</option>
+                    </select>
+                    <label>Reading Speed</label>
                 </div>
                 <button id="submit-btn" class="btn waves-effect waves-light">Submit
                     <i class="material-icons right">send</i>
@@ -37,8 +55,8 @@
         <div class="col s3"></div>
         <div class="col s6">
             <div class="card">
-                <div class="card-image">
-                    <img src="">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img src="" class="activator">
                 </div>
                 <div class="card-stacked">
                     <div class="card-action">
@@ -46,6 +64,11 @@
                     </div>
                     <div class="card-content">
                         <p>This is where the plot will appear. </p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Card Title<i
+                                class="material-icons right">close</i></span>
+                        <p>Here is some more information that is only revealed once clicked on.</p>
                     </div>
                     <p class="grey-text" id="click-text">Click to hear the plot!</p>
                     <a class="btn-floating halfway-fab waves-effect waves-light red pulse">
@@ -56,7 +79,7 @@
         <div class="col s3"></div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> -->
     <script src="./script.js"></script>
 </body>
