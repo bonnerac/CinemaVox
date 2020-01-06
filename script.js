@@ -4,7 +4,6 @@ $(document).ready(function () {
     if (screen.width > 900) {
         $(".card").attr("class", "card horizontal")
     }
-
     $('select').formSelect();
 
     var output_plot = "";
@@ -19,7 +18,6 @@ $(document).ready(function () {
         // console.log($("#test5").val());
         sound_value = parseInt($("#test5").val());
 
-
         // $(".card").show()
         console.log(event);
         var movie = $("#textarea1").val().trim();
@@ -29,18 +27,12 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
+            console.log(response);
             if (response.Response == "False") {
                 $('.modal').modal();
                 $('#modal1').modal('open');
             }
             else {
-                $(".card").show()
-                console.log("Got reponse:" + response);
-                output_plot = response.Plot;
-                $(".card-content").text(output_plot);
-                console.log(response);
-                $("img").attr("src", response.Poster);
-                $(".card-title").text(response.Title + " (" + response.Year + ")");
 
                 if ($("#select").val() != 1 &&
                     $("#select").val() != 2 &&
@@ -70,8 +62,17 @@ $(document).ready(function () {
                         accent = "en-us"
                     }
                 }
+                $(".card").show()
+                console.log("Got reponse:" + response);
+                output_plot = response.Plot;
+                $(".card-content").text(output_plot);
+                console.log(response);
+                $("img").attr("src", response.Poster);
+                $(".card-title").text(response.Title + " (" + response.Year + ")");
+                getVideo(movie);
             }
         });
+        // getVideo(movie);
         console.log(typeof ($("#select").val()));
     });
 
@@ -98,5 +99,30 @@ $(document).ready(function () {
             console.log("Output is " + event);
         });
     })
+
+    function getVideo(movie) {
+        $.ajax({
+            type: 'GET',
+            url: 'https://www.googleapis.com/youtube/v3/search',
+            data: {
+                key: 'AIzaSyC7WTIOaXIuyXSbUvfFsFNQC51m4kQ3Vaw',
+                q: movie + " Official Trailer",
+                part: 'snippet',
+                maxResults: 1,
+                type: 'video',
+                videoEmbeddable: true,
+            },
+            success: function (data) {
+                console.log(data);
+                console.log("the id for video " + data.items[0].id.videoId);
+                console.log('https://www.youtube.com/embed/' + data.items[0].id.videoId);
+                console.log('https://www.youtube.com/watch?v=' + data.items[0].id.videoId);
+                $(".card-title").text("https://www.youtube.com/watch?v=" + data.items[0].id.videoId);
+            },
+            error: function (response) {
+                console.log("Request Failed");
+            }
+        });
+    }
 });
 
