@@ -15,6 +15,14 @@ $(document).ready(function () {
 
     $("#submit-btn").on("click", function (event) {
         event.preventDefault();
+
+        // document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(elems, {
+            direction: 'left'
+        });
+        // });
+        // instances.open();
         // console.log($("#select").val());
         // console.log($("#test5").val());
         sound_value = parseInt($("#test5").val());
