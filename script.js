@@ -77,7 +77,7 @@ $(document).ready(function () {
     });
 
 
-    $(".btn-floating").on("click", function () {
+    $(".btn-floating1").on("click", function () {
         console.log("working");
         var queryURL_rss = "http://api.voicerss.org/?key=68d5397c419d4cbea5dfe35a4fc712c8&hl=en-us&src=" + output_plot;
         var queryURL_rss = "http://api.voicerss.org/?";
@@ -98,6 +98,12 @@ $(document).ready(function () {
             });
             console.log("Output is " + event);
         });
+    })
+
+
+
+    $(".btn-floating2").on("click", function () {
+
     })
 
     function getVideo(movie) {
