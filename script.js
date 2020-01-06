@@ -9,6 +9,7 @@ $(document).ready(function () {
     var output_plot = "";
     var accent = "";
     var sound_value;
+    var movie = "";
 
     console.log($("#select").val());
 
@@ -28,7 +29,7 @@ $(document).ready(function () {
 
         // $(".card").show()
         console.log(event);
-        var movie = $("#textarea1").val().trim();
+        movie = $("#textarea1").val().trim();
         console.log("Querying for movie:" + movie);
         var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=7e894ee5";
         $.ajax({
@@ -77,7 +78,7 @@ $(document).ready(function () {
                 console.log(response);
                 $("img").attr("src", response.Poster);
                 $(".card-title").text(response.Title + " (" + response.Year + ")");
-                getVideo(movie);
+
             }
         });
         // getVideo(movie);
@@ -85,7 +86,7 @@ $(document).ready(function () {
     });
 
 
-    $(".btn-floating1").on("click", function () {
+    $("#tts").on("click", function () {
         console.log("working");
         var queryURL_rss = "http://api.voicerss.org/?key=68d5397c419d4cbea5dfe35a4fc712c8&hl=en-us&src=" + output_plot;
         var queryURL_rss = "http://api.voicerss.org/?";
@@ -110,8 +111,8 @@ $(document).ready(function () {
 
 
 
-    $(".btn-floating2").on("click", function () {
-
+    $("#submit-btn").on("click", function () {
+        getVideo(movie);
     })
 
     function getVideo(movie) {
@@ -131,7 +132,8 @@ $(document).ready(function () {
                 console.log("the id for video " + data.items[0].id.videoId);
                 console.log('https://www.youtube.com/embed/' + data.items[0].id.videoId);
                 console.log('https://www.youtube.com/watch?v=' + data.items[0].id.videoId);
-                $(".card-title").text("https://www.youtube.com/watch?v=" + data.items[0].id.videoId);
+                $("#youtube").attr("href", 'https://www.youtube.com/watch?v=' + data.items[0].id.videoId);
+                // $(".card-title").text("https://www.youtube.com/watch?v=" + data.items[0].id.videoId);
             },
             error: function (response) {
                 console.log("Request Failed");
