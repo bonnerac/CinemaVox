@@ -88,8 +88,8 @@ $(document).ready(function () {
 
     $("#tts").on("click", function () {
         console.log("working");
-        var queryURL_rss = "http://api.voicerss.org/?key=68d5397c419d4cbea5dfe35a4fc712c8&hl=en-us&src=" + output_plot;
-        var queryURL_rss = "http://api.voicerss.org/?";
+        var queryURL_rss = "https://cors-anywhere.herokuapp.com/api.voicerss.org/?key=68d5397c419d4cbea5dfe35a4fc712c8&hl=en-us&src=" + output_plot;
+        var queryURL_rss = "https://cors-anywhere.herokuapp.com/api.voicerss.org/?";
 
         $.ajax({
             url: queryURL_rss,
