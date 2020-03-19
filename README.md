@@ -1,28 +1,19 @@
-# project1
+# CinemaVox
 
-Project Folder: bonnerac/project1/
+## Description
 
-Brief description of submitted files:
+An application that takes the user's selected movie, and speaks the plot back to them. 
 
-index.html --> The main website designed using materialize:
-    textarea -- allows user to enter the name of a movie to search.
-    'select' -- allows user to pick an accent from a list of five accents.
-    range -- allows user to arrange speed of the speech in the range of -10 to 10. (-10 is slowest, 10 is fastest)
-    submit button -- queries omdb api to get the plot and poster of given movie and displays the poster and plot.
-    button(red) -- queries voicerss api to convert the plot (in text) to speech and plays the plot in spoken form.
-    button(blue)-- opens a new tab with the trailer of the movie from youtube.
+## Technologies Used
 
+voicerss-tts --> converts text to speech using the voicerss api. 
+Youtube API --> Shows movie trailer
+OMBD API --> Populates movie information
+JavaScript
+Materialize
 
-script.js --> Functionality of the website is implemented by this file. There are three main functions which  enable the user to search for a movie, listen to the plot and watch the trailer of the corresponding movie. The function that enables the user to search the movie is implemented by using omdb API, the function that enables the user to listen to the plot of the movie is implemented by using voicerss API and the function for watching the video of the trailer is implemented by YouTube API.
-
-
-style.css --> External css file defines how HTML elements should be displayed. It determines the look and style of the page.
-
-
-Background-sinema.jpg --> The picture used as background of the website. 
-
-
-jquery.voicerss-tts.min.js --> SDK to convert text to speech using the voicerss api. 
-
-
-README.md --> Description of submitted files.
+## Functions
+User enters name of a movie to search in the first text field.
+The next drop down menu allows the user to select from five different English accents.
+Range slider allows the user to pick the speech speed (-10 is slowest, 10 is fastest).
+Once movie information is populated, user can click the red button to have the plot spoken to them, and the blue button to be taken to the movie trailer via YouTube.
