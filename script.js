@@ -15,19 +15,12 @@ $(document).ready(function () {
 
     $("#submit-btn").on("click", function (event) {
         event.preventDefault();
-
-        // document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.fixed-action-btn');
         var instances = M.FloatingActionButton.init(elems, {
             direction: 'left'
         });
-        // });
-        // instances.open();
-        // console.log($("#select").val());
-        // console.log($("#test5").val());
         sound_value = parseInt($("#test5").val());
 
-        // $(".card").show()
         console.log(event);
         movie = $("#textarea1").val().trim();
         console.log("Querying for movie:" + movie);
@@ -81,7 +74,6 @@ $(document).ready(function () {
 
             }
         });
-        // getVideo(movie);
         console.log(typeof ($("#select").val()));
     });
 
@@ -95,7 +87,6 @@ $(document).ready(function () {
             url: queryURL_rss,
             method: "GET"
         }).then(function (event) {
-            // console.log("Output is " + event);
             $.speech({
                 key: '56d46fda47404a73b8b4d0b4925d7eef',
                 src: output_plot,
@@ -133,7 +124,6 @@ $(document).ready(function () {
                 console.log('https://www.youtube.com/embed/' + data.items[0].id.videoId);
                 console.log('https://www.youtube.com/watch?v=' + data.items[0].id.videoId);
                 $("#youtube").attr("href", 'https://www.youtube.com/watch?v=' + data.items[0].id.videoId);
-                // $(".card-title").text("https://www.youtube.com/watch?v=" + data.items[0].id.videoId);
             },
             error: function (response) {
                 console.log("Request Failed");
